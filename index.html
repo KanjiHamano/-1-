@@ -372,6 +372,49 @@ form{display:grid;gap:18px}
 .fbottom strong{color:var(--fg)}
 .facc .acc-panel{padding:0 12px 8px}
 
+/* ---------- Home (3 entrances) ---------- */
+.home{padding-block:48px 72px;display:grid;gap:36px}
+.home-hero{display:grid;gap:14px;max-width:46em}
+.home-hero h1{font-size:clamp(28px,4.2vw,40px);font-weight:700;letter-spacing:.02em;display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.home-hero h1:focus{outline:none}
+.home-beta{font-size:14px;font-weight:700;color:var(--accent-strong);border:1.5px solid var(--accent);border-radius:6px;padding:2px 8px;letter-spacing:0}
+.home-hero .lead{font-size:17px;line-height:1.8;color:var(--fg)}
+.home-entries{display:grid;gap:16px}
+.start-hint{justify-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;color:var(--accent-strong);background:var(--accent-soft);padding:8px 16px;border-radius:999px}
+.entries{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.entry{display:flex;flex-direction:column;gap:14px;height:100%;padding:28px 24px 24px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;text-decoration:none;color:var(--fg)}
+.entry:hover{border-color:var(--accent);box-shadow:0 6px 20px rgba(23,76,166,.10)}
+.entry.is-first{border:2px solid var(--accent)}
+.entry-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.entry-num{font-size:30px;font-weight:700;line-height:1;color:var(--accent-strong)}
+.entry-ico{width:48px;height:48px;border-radius:10px;background:var(--accent-soft);color:var(--accent-strong);display:flex;align-items:center;justify-content:center}
+.entry-ico .icon{width:26px;height:26px}
+.entry h2{font-size:24px;font-weight:700}
+.entry p{font-size:16px;line-height:1.7;color:var(--fg)}
+.entry-btn{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:52px;padding:12px 18px;border-radius:10px;background:var(--accent-soft);color:var(--accent-strong);font-weight:700;font-size:16px}
+.entry.is-first .entry-btn{background:var(--accent);color:var(--on-accent)}
+.entry:hover .entry-btn{background:var(--accent-strong);color:var(--on-accent)}
+.home-note{font-size:14px;color:var(--muted)}
+/* ---------- Back link / mini TOC / related ---------- */
+.back-link{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:10px;padding:0 14px 0 8px;font-weight:700;font-size:15px;color:var(--accent-strong);text-decoration:none;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.back-link:hover{border-color:var(--accent)}
+.page-end{margin-top:16px}
+.mini-toc{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:20px 0 4px}
+.mini-toc-lbl{font-size:14px;font-weight:700;color:var(--muted);margin-right:4px}
+.mini-toc a{display:inline-flex;align-items:center;min-height:40px;padding:6px 12px;background:var(--surface);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--fg);font-size:14px}
+.mini-toc a:hover{border-color:var(--accent);color:var(--accent-strong)}
+.related-links{margin-top:40px;padding-top:16px;border-top:1px solid var(--line)}
+.related-links h2{font-size:15px;color:var(--muted);margin-bottom:6px}
+.related-links ul{list-style:none;display:grid;gap:2px}
+.related-links a{display:inline-flex;align-items:center;min-height:40px;font-size:15px}
+.dnav-group{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.04em;margin:16px 12px 4px;padding-top:12px;border-top:1px solid var(--line)}
+.dnav-small .dnav-link{font-size:15px;min-height:44px}
+.fmain{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.fcol h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.site-footer .fcols{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1023px){.entries{grid-template-columns:minmax(0,1fr)}.entry{padding:22px 20px 20px}.entry h2{font-size:22px}}
+@media (max-width:720px){.home{padding-block:28px 48px;gap:24px}.site-footer .fcols{grid-template-columns:minmax(0,1fr);gap:8px}.fmain{gap:16px}}
+
 /* ---------- Toast ---------- */
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:90;font-size:15px;max-width:calc(100vw - 32px)}
 
@@ -430,7 +473,7 @@ form{display:grid;gap:18px}
 .subject-code{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent)}
 .subject-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}.subject-shortcuts a{padding:10px 14px;background:var(--surface);border:1px solid var(--line);border-radius:8px;text-decoration:none;font-size:14px;min-height:44px}
 .subject-placeholder{padding:24px;border:1px dashed #9CBCEB;background:#F8FBFF;border-radius:10px;display:grid;gap:8px;color:var(--muted)}
-.subject-placeholder h3{color:var(--fg);font-size:17px}.subject-placeholder+.subject-placeholder{margin-top:12px}
+.subject-placeholder .tag{justify-self:start}.subject-placeholder h3{color:var(--fg);font-size:17px}.subject-placeholder+.subject-placeholder{margin-top:12px}
 .part-tag.p2{background:var(--accent-soft);border:1px solid var(--line);color:var(--accent-strong)}
 @media(min-width:1024px) and (max-width:1200px){.gnav-link{padding:0 8px;font-size:14px}.search{width:180px}.header-in{gap:10px}.brand-name{font-size:17px}}
 @media(max-width:720px){.subject-grid{grid-template-columns:1fr}.subject-card{padding:20px}.fcols{grid-template-columns:1fr}}
@@ -458,13 +501,13 @@ window.SITE_CONTENT = {
   },
 
   home: {
-    title: "応化の院試を、日程と形式から知る",
     lead: "早稲田の院試（内部受験）について、学部1〜3年生がまず知っておきたい基本情報、選択科目ごとの学習情報、受験した先輩へのアンケート結果をまとめる学科内向けの情報共有サイトです。",
-    steps: [
-      { title: "院試の全体像を知る", desc: "どんな試験が、どの順番であるのかを一覧で確認", route: "basic" },
-      { title: "日程・形式を確認する", desc: "出願から合格発表までの流れと、筆記試験のしくみ", route: "basic-schedule" },
-      { title: "科目別に準備する", desc: "選択科目の基本情報・過去問・対策法を見る", route: "subjects" }
+    entries: [
+      { route: "basic", num: "①", icon: "calendar", title: "基本情報", desc: "日程・試験形式・英語など、院試の全体像を知る", button: "基本情報を見る" },
+      { route: "subjects", num: "②", icon: "files", title: "選択科目", desc: "科目ごとの基本情報・過去問・対策法を調べる", button: "科目を選ぶ" },
+      { route: "voices", num: "③", icon: "people", title: "先輩たちの声", desc: "先輩の科目選びや準備の経験を参考にする", button: "先輩たちの声を見る" }
     ],
+    startHint: "初めての方は、①基本情報から",
     news: [
       { date: "2026-10-25", cat: "サイト", text: "レイアウト確認用のβ版プロトタイプを作成しました（本文は仮文です）。" },
       { date: "2026-10-20", cat: "構成", text: "第1部「基本情報」と第2部「選択科目」・第3部「先輩たちの声」の3部構成です（レイアウト案）。" },
@@ -734,10 +777,13 @@ const NAV = [
   { route: 'home', label: 'ホーム', icon: 'home' },
   { route: 'basic', label: '基本情報', icon: 'calendar', children: [{ route: 'basic', label: '基本情報の一覧' }].concat(PAGES.map(p => ({ route: 'basic-' + p.id, label: p.title, icon: p.icon }))) },
   { route: 'subjects', label: '選択科目', icon: 'files', children: [{route:'subjects',label:'選択科目の一覧'}].concat(SUBJECTS.map(p => ({route:'subject-'+p.id,label:p.name}))) },
-  { route: 'voices', label: '先輩たちの声', icon: 'people', children: [{ route: 'voices', label: '概要と注意書き' }].concat(C.voiceSections.map(s => ({ route: 'voices', anchor: s.id, label: s.label }))) },
+  { route: 'voices', label: '先輩たちの声', icon: 'people' }
+];
+/* ヘッダーには出さず、ハンバーガーメニューとフッターにまとめる項目 */
+const NAV_SITE = [
   { route: 'faq', label: 'よくある質問', icon: 'question' },
-  { route: 'about', label: '運営について', icon: 'info', children: [
-    { route: 'about', label: '運営元・方針' }, { route: 'about', anchor: 'privacy', label: 'プライバシー方針（仮）' }, { route: 'about', anchor: 'contact', label: '質問・誤り報告' } ] }
+  { route: 'about', label: '運営について', icon: 'info' },
+  { route: 'about', anchor: 'contact', label: '問い合わせ・誤り報告', icon: 'mail' }
 ];
 const inSection = (route, top) => route === top || (top === 'basic' && route.startsWith('basic-')) || (top === 'subjects' && route.startsWith('subject-'));
 
@@ -760,6 +806,7 @@ const SEARCH_INDEX = [].concat(
   ...C.faq.map(c => [{ title: c.cat, cat: 'よくある質問', route: 'faq', anchor: c.id, kw: c.items.map(i => i.q).join(' ') }]),
   [{ title: '運営について', cat: 'サイトについて', route: 'about', kw: '運営元 発起人 応用化学委員 非公式 非営利' },
    { title: '情報の確認・更新方針', cat: '運営について', route: 'about', anchor: 'policy', kw: '更新 確認 出典' },
+   { title: 'お知らせ・更新履歴', cat: '運営について', route: 'about', anchor: 'news', kw: 'お知らせ 更新 履歴 ニュース' },
    { title: 'プライバシー方針（仮）', cat: '運営について', route: 'about', anchor: 'privacy', kw: '個人情報 プライバシー' },
    { title: '質問・誤り報告フォーム', cat: '運営について', route: 'about', anchor: 'contact', kw: '問い合わせ 誤り 報告 フォーム 質問' }]
 );
@@ -854,6 +901,16 @@ function PageHead({ part, title, lead, tags }){
     ${lead && html`<p className="lead">${lead}</p>`}
   </header>`;
 }
+function BackLink({ route, label }){
+  return html`<${NavLink} route=${route} className="back-link"><${Icon} name="left"/>${label}<//>`;
+}
+function MiniToc({ items }){
+  return html`<nav className="mini-toc" aria-label="このページの目次"><span className="mini-toc-lbl">目次</span>${items.map(([id, label]) => html`<a key=${id} href=${'#' + id} onClick=${e => { e.preventDefault(); scrollToAnchor(id); }}>${label}</a>`)}</nav>`;
+}
+function RelatedLinks({ links }){
+  return html`<aside className="related-links" aria-labelledby="related"><h2 id="related">関連する情報</h2>
+    <ul>${links.map((l, i) => html`<li key=${i}><${NavLink} route=${l.route} anchor=${l.anchor}>${l.label}<//></li>`)}</ul></aside>`;
+}
 const Part1 = () => html`<span className="part-tag"><${Icon} name="calendar"/>第1部 基本情報</span>`;
 const Part2 = () => html`<span className="part-tag p2"><${Icon} name="people"/>第3部 先輩たちの声</span>`;
 
@@ -874,10 +931,7 @@ function Header({ menuOpen, onMenu, menuBtnRef }){
       <//>
       ${!compact && html`<nav className="gnav" aria-label="主要ナビゲーション">${NAV.map(item => {
         const cur = inSection(route, item.route);
-        return html`<div key=${item.route} className=${'gnav-item' + (item.children ? ' has-sub' : '')}>
-          <${NavLink} route=${item.route} className=${'gnav-link' + (cur ? ' is-current' : '')} current=${cur}>${item.label}${item.children && html`<${Icon} name="chevron"/>`}<//>
-          ${item.children && html`<ul className="gnav-sub">${item.children.map((c, i) => html`<li key=${i}><${NavLink} route=${c.route} anchor=${c.anchor} current=${!c.anchor && c.route === route && i > 0}>${c.label}<//></li>`)}</ul>`}
-        </div>`; })}</nav>
+        return html`<div key=${item.route} className="gnav-item"><${NavLink} route=${item.route} className=${'gnav-link' + (cur ? ' is-current' : '')} current=${cur}>${item.label}<//></div>`; })}</nav>
         <${Search} id="search-desktop"/>`}
       ${compact && html`<div className="header-actions">
         <button type="button" className="icon-btn" aria-expanded=${searchOpen ? 'true' : 'false'} aria-controls="mobile-search" onClick=${() => setSearchOpen(!searchOpen)}>
@@ -894,11 +948,13 @@ function Header({ menuOpen, onMenu, menuBtnRef }){
 function Drawer({ onClose }){
   const { route } = useNav();
   const panel = useRef(null), closeBtn = useRef(null);
-  const [openSec, setOpenSec] = useState(() => ({ basic: inSection(route, 'basic'), subjects: inSection(route, 'subjects'), voices: route === 'voices', about: route === 'about' }));
+  const [openSec, setOpenSec] = useState(() => ({ basic: inSection(route, 'basic'), subjects: inSection(route, 'subjects') }));
   useEffect(() => {
     document.body.classList.add('no-scroll');
     const t = setTimeout(() => closeBtn.current && closeBtn.current.focus(), 0);
-    return () => { clearTimeout(t); document.body.classList.remove('no-scroll'); };
+    const onEsc = e => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onEsc);
+    return () => { clearTimeout(t); document.removeEventListener('keydown', onEsc); document.body.classList.remove('no-scroll'); };
   }, []);
   const onKey = e => {
     if (e.key === 'Escape'){ e.stopPropagation(); onClose(); return; }
@@ -930,6 +986,8 @@ function Drawer({ onClose }){
               const curChild = !c.anchor && c.route === route;
               return html`<li key=${i}><${NavLink} route=${c.route} anchor=${c.anchor} className="dnav-link" current=${curChild}>${c.label}<//></li>`; })}</ul>
           <//></li>`; })}</ul>
+        <h3 className="dnav-group">サイトについて</h3>
+        <ul className="dnav dnav-small">${NAV_SITE.map((item, i) => html`<li key=${i}><${NavLink} route=${item.route} anchor=${item.anchor} className="dnav-link" current=${!item.anchor && route === item.route}><${Icon} name=${item.icon}/>${item.label}<//></li>`)}</ul>
         <p className="drawer-note">${C.site.demoNote}<br/>${C.site.unofficial}</p>
       </nav>
     </div>
@@ -939,7 +997,6 @@ function Drawer({ onClose }){
 /* ---------- Footer (sitemap) ---------- */
 function Footer(){
   const { route } = useNav();
-  const narrow = useMedia('(max-width: 720px)');
   const cols = [
     { id: 'f-basic', title: '基本情報', icon: 'calendar', links: PAGES.map(p => ({ route: 'basic-' + p.id, label: p.title })) },
     {id:'f-subjects',title:'選択科目',icon:'files',links:SUBJECTS.map(p=>({route:'subject-'+p.id,label:p.name}))},
@@ -950,13 +1007,17 @@ function Footer(){
       { route: 'faq', label: 'よくある質問' }, { route: 'about', label: '運営について' },
       { route: 'about', anchor: 'privacy', label: 'プライバシー方針（仮）' }, { route: 'about', anchor: 'contact', label: '質問・誤り報告' }] }
   ];
-  const list = c => html`<ul className="flinks">${c.links.map((l, i) => html`<li key=${i}><${NavLink} route=${l.route} anchor=${l.anchor} current=${!l.anchor && l.route === route}>${l.label}<//></li>`)}</ul>`;
+  const list = links => html`<ul className="flinks">${links.map((l, i) => html`<li key=${i}><${NavLink} route=${l.route} anchor=${l.anchor} current=${!l.anchor && l.route === route}>${l.label}<//></li>`)}</ul>`;
   return html`<footer className="site-footer">
     <div className="container footer-in">
-      <nav aria-label="サイトマップ">
-        ${narrow
-          ? html`<div className="acc-group">${cols.map(c => html`<${Accordion} key=${c.id} id=${c.id} level=${2} extraClass="facc" title=${html`<${Icon} name=${c.icon}/>${c.title}`}>${list(c)}<//>`)}</div>`
-          : html`<div className="fcols">${cols.map(c => html`<div key=${c.id} className="fcol"><h2><${Icon} name=${c.icon}/>${c.title}</h2>${list(c)}</div>`)}</div>`}
+      <nav aria-label="フッターメニュー" className="fmain">
+        <div className="fcol"><h2>メインメニュー</h2>${list(NAV)}</div>
+        <div className="fcol"><h2>サイトについて</h2>${list(NAV_SITE.concat([{ route: 'about', anchor: 'privacy', label: 'プライバシー方針（仮）' }]))}</div>
+      </nav>
+      <nav aria-label="サイトマップ" className="acc-group">
+        <${Accordion} id="f-sitemap" level=${2} extraClass="facc" title=${html`<${Icon} name="menu"/>サイトマップ（すべてのページ）`}>
+          <div className="fcols">${cols.slice(0, 3).map(c => html`<div key=${c.id} className="fcol"><h3><${Icon} name=${c.icon}/>${c.title}</h3>${list(c.links)}</div>`)}</div>
+        <//>
       </nav>
       <div className="fbottom">
         <p><strong>運営元：${C.site.operator}</strong></p>
@@ -973,83 +1034,45 @@ function Footer(){
 ===================================================================== */
 function Home(){
   const H = C.home;
-  return html`<div className="container">
-    <section className="intro" aria-labelledby="home-title">
-      <div className="intro-text">
-        <p className="eyebrow"><span className="tag">早稲田の院試・内部受験</span><span className="tag">学部1〜3年生向け</span></p>
-        <h1 id="home-title" tabIndex="-1">${H.title}</h1>
-        <p className="lead">${H.lead}</p>
-        <p className="note">${C.site.unofficial}。運営元：${C.site.operator}</p>
-      </div>
-      <div className="intro-actions">
-        <${NavLink} route="basic" className="cta cta-primary"><${Icon} name="calendar"/><span><span className="cta-t">まずは基本情報</span><span className="cta-d">日程・試験の形式・英語など6項目</span></span><${Icon} name="arrow"/><//>
-        <${NavLink} route="subjects" className="cta cta-secondary"><${Icon} name="files"/><span><span className="cta-t">選択科目から探す</span><span className="cta-d">無機／有機／物理化学／化学工学／生物</span></span><${Icon} name="arrow"/><//>
-        <${NavLink} route="voices" className="cta cta-secondary"><${Icon} name="people"/><span><span className="cta-t">先輩たちの声を見る</span><span className="cta-d">受験した先輩へのアンケート集計</span></span><${Icon} name="arrow"/><//>
-      </div>
+  return html`<div className="container home">
+    <section className="home-hero" aria-labelledby="home-title">
+      <h1 id="home-title" tabIndex="-1">${C.site.name}<span className="home-beta">β版</span></h1>
+      <p className="lead">${H.lead}</p>
     </section>
-
-    <section className="section" aria-labelledby="h-steps">
-      <div className="section-head"><h2 id="h-steps">ここから始める</h2><p>初めての人は、この順番で読むと全体がつかめます。</p></div>
-      <ol className="steps">${H.steps.map((s, i) => html`<li key=${i} className="step"><${NavLink} route=${s.route}>
-        <span className="step-n">${i + 1}</span><span className="step-t">${s.title}</span><span className="step-d">${s.desc}</span><//></li>`)}</ol>
-    </section>
-
-    <section className="section" aria-labelledby="h-basic">
-      <div className="section-head"><h2 id="h-basic"><${Part1}/> 全員が知っておきたい前提</h2>
-        <${NavLink} route="basic" className="btn btn-sub btn-sm">基本情報の一覧へ<${Icon} name="arrow"/><//>
-        <p>発起人が調べてまとめる情報です。日程や形式が変わったときに見直します。</p></div>
-      <ul className="cards">${PAGES.map((p, i) => html`<${CategoryCard} key=${p.id} page=${p} index=${i}/>`)}</ul>
-    </section>
-
-    <section className="section" aria-labelledby="h-subjects">
-      <div className="section-head"><h2 id="h-subjects"><${SubjectPart}/> 科目別に準備を進める</h2><${NavLink} route="subjects" className="btn btn-sub btn-sm">選択科目の一覧へ<${Icon} name="arrow"/><//><p>各科目の基本情報・過去問の大問例・対策法を確認できます。本文は準備中です。</p></div>
-      <${SubjectCards}/>
-    </section>
-    <section className="section" aria-labelledby="h-voices">
-      <div className="section-head"><h2 id="h-voices"><${Part2}/> 先輩の実際の選択と準備</h2><${DemoTag}/>
-        <p>早稲田の院試を受けた応化の先輩へのアンケートを、毎年集計して積み上げます。</p></div>
-      <div className="box voices-entry">
-        <div style=${{ display: 'grid', gap: '14px' }}>
-          <div className="facts">
-            <div className="fact"><b>9問</b><span>アンケートの設問数</span></div>
-            <div className="fact"><b>匿名</b><span>メールは記録しない</span></div>
-            <div className="fact"><b>3人以上</b><span>の集計だけを表示</span></div>
-          </div>
-          <p className="note">結果はGPAやこれまでの学習の蓄積にも左右されます。鵜呑みにせず、参考として見てください。</p>
-          <div><${NavLink} route="voices" className="btn">集計結果を見る<${Icon} name="arrow"/><//></div>
-        </div>
-        <div>
-          <p className="note" style=${{ marginBottom: '6px' }}>見られる内容（受験の流れの順）</p>
-          <ul className="qlist">${C.voiceSections.map((s, i) => html`<li key=${s.id}><span className="qn">${['①②', '③④⑤⑥⑦', '⑧', '⑨'][i]}</span><${NavLink} route="voices" anchor=${s.id}>${s.label}<//></li>`)}</ul>
-        </div>
-      </div>
-    </section>
-
-    <section className="section" aria-labelledby="h-news">
-      <div className="section-head"><h2 id="h-news">お知らせ・更新履歴</h2>
-        <button type="button" className="btn btn-sm" disabled>すべての履歴を見る（準備中）</button></div>
-      <ul className="news">${H.news.map((n, i) => html`<li key=${i}><time>${n.date}</time><span><span className="tag">${n.cat}</span></span><p>${n.text}</p></li>`)}</ul>
-    </section>
+    <nav className="home-entries" aria-labelledby="home-start">
+      <p className="start-hint" id="home-start"><${Icon} name="info"/>${H.startHint}</p>
+      <ol className="entries">${H.entries.map((e, i) => html`<li key=${e.route}>
+        <${NavLink} route=${e.route} className=${'entry' + (i === 0 ? ' is-first' : '')}>
+          <span className="entry-top"><span className="entry-num" aria-hidden="true">${e.num}</span><span className="entry-ico"><${Icon} name=${e.icon}/></span></span>
+          <h2>${e.title}</h2>
+          <p>${e.desc}</p>
+          <span className="entry-btn">${e.button}<${Icon} name="arrow"/></span>
+        <//></li>`)}</ol>
+    </nav>
+    <p className="home-note">${C.site.unofficial}。「先輩たちの声」の数値はレイアウト確認用の架空データです。</p>
   </div>`;
 }
 
-
 const SubjectPart = () => html`<span className="part-tag p2"><${Icon} name="files"/>第2部 選択科目</span>`;
-function SubjectCards(){return html`<ul className="subject-grid">${SUBJECTS.map(p=>html`<li key=${p.id}><${NavLink} route=${'subject-'+p.id} className="subject-card"><span className="subject-code">${p.code}</span><h3>${p.name}</h3><p>${p.desc}。基本情報と準備の進め方をまとめます。</p><span className="chips"><span className="tag">基本情報</span><span className="tag">過去問・大問例</span><span className="tag">対策法</span></span><span className="note">科目のページへ →</span><//></li>`)}</ul>`;}
+function SubjectCards(){return html`<ul className="cards">${SUBJECTS.map((p,i)=>html`<li key=${p.id}><${NavLink} route=${'subject-'+p.id} className="card-link">
+  <span className="card-ico"><${Icon} name="files"/></span>
+  <span className="card-body"><span className="card-num">選択科目 ${i+1}/${SUBJECTS.length}</span><span className="card-title">${p.name}</span><span className="card-desc">${p.desc}</span></span>
+  <span className="card-arrow"><${Icon} name="arrow"/></span><//></li>`)}</ul>`;}
 function SubjectList(){return html`<div className="container page"><${Breadcrumbs} items=${[{label:'ホーム',route:'home'},{label:'選択科目'}]}/><${PageHead} part=${html`<${SubjectPart}/>`} title="選択科目" lead="5つの科目から、調べたい科目を選んでください。各科目の基本情報・過去問の大問例・対策法へ進めます。"/><${SubjectCards}/><p className="note" style=${{marginTop:'20px'}}>掲載内容はレイアウト確認用です。試験範囲・教材・過去問は確認後に追加します。</p></div>`;}
 function SubjectDetail({subject:p}){
  const compact=useMedia('(max-width:1023px)');
- const toc=html`<ol className="toc">${SUBJECT_SECTIONS.map(([id,label])=>html`<li key=${id}><a href=${'#'+id} onClick=${e=>{e.preventDefault();scrollToAnchor(id);}}>${label}</a></li>`)}</ol>`;
- return html`<div className="container page"><${Breadcrumbs} items=${[{label:'ホーム',route:'home'},{label:'選択科目',route:'subjects'},{label:p.name}]}/><${PageHead} part=${html`<${SubjectPart}/>`} tags=${html`<span className="tag">内容準備中</span>`} title=${p.name} lead=${p.desc+'。基本情報から過去問・大問例、対策法までをこのページにまとめます。'}/><div className="detail-grid"><article className="detail-main"><div className="subject-shortcuts">${SUBJECT_SECTIONS.map(([id,label])=>html`<a key=${id} href=${'#'+id} onClick=${e=>{e.preventDefault();scrollToAnchor(id);}}>${label}</a>`)}</div>
- ${compact && html`<${Accordion} id="subject-toc" title="この科目の目次" variant="box">${toc}<//>`}
+ const next=SUBJECTS[(SUBJECTS.indexOf(p)+1)%SUBJECTS.length];
+ return html`<div className="container page"><${Breadcrumbs} items=${[{label:'ホーム',route:'home'},{label:'選択科目',route:'subjects'},{label:p.name}]}/><${BackLink} route="subjects" label="科目一覧に戻る"/>
+ <div className="detail-grid"><article className="detail-main"><${PageHead} part=${html`<${SubjectPart}/>`} tags=${html`<span className="tag">内容準備中</span>`} title=${p.name} lead=${p.desc+'。基本情報から過去問・大問例、対策法までをこのページにまとめます。'}/>
+ <${MiniToc} items=${SUBJECT_SECTIONS}/>
  <section className="doc-sec" id="overview"><h2>${p.name}の基本情報</h2><dl className="facts-dl"><dt>科目の概要</dt><dd>${p.desc}（仮の説明）</dd><dt>出題範囲</dt><dd>確認中</dd><dt>前提となる知識</dt><dd>執筆予定</dd><dt>試験形式・配点</dt><dd>公式資料を確認後に掲載</dd></dl></section>
  <section className="doc-sec" id="past-exams"><h2>過去問・大問例</h2><p className="note" style=${{marginBottom:'14px'}}>過去にあった大問を年度別に紹介する欄です。実際の問題や出題内容は未登録です。</p>
  ${['年度別の過去問','過去にあった大問の例'].map((label,i)=>html`<${Accordion} key=${i} id=${'past-'+p.id+'-'+i} title=${label} defaultOpen=${i===0} variant="box"><div className="subject-placeholder"><span className="tag">掲載準備中</span><h3>${label}の掲載スペース</h3><p>対象年度・大問番号・テーマ・出典・解説への入口をここに配置します。</p><p className="note">実際の過去問は未提供です。内容を確認してから追加します。</p><button className="btn btn-sub btn-sm" disabled>過去問を見る（準備中）</button></div><//>`)}</section>
  <section className="doc-sec" id="strategy"><h2>対策法</h2><ol className="numbered"><li><strong>基礎を確認する</strong><p className="note">この科目で先に理解しておきたい項目を掲載予定。</p></li><li><strong>例題・過去問に取り組む</strong><p className="note">演習の進め方と解き方のポイントを掲載予定。</p></li><li><strong>つまずきを復習する</strong><p className="note">よくある誤りと見直し方を掲載予定。</p></li></ol></section>
  <section className="doc-sec" id="resources"><h2>参考資料</h2><div className="subject-placeholder"><p>教科書・資料名と用途を追加予定。資料本体は掲載しません。</p></div></section>
- <section className="doc-sec"><h2>先輩の経験も参考にする</h2><p className="note" style=${{marginBottom:'12px'}}>科目選びや勉強時間の配分について、先輩アンケートも確認できます。</p><${NavLink} route="voices" className="btn btn-sub">第3部：先輩たちの声へ<${Icon} name="arrow"/><//></section>
- <div className="pager" style=${{marginTop:'32px'}}><${NavLink} route="subjects" className="prev"><span className="dir">科目一覧へ</span><b>選択科目</b><//><${NavLink} route=${'subject-'+SUBJECTS[(SUBJECTS.indexOf(p)+1)%SUBJECTS.length].id} className="next"><span className="dir">次の科目へ</span><b>${SUBJECTS[(SUBJECTS.indexOf(p)+1)%SUBJECTS.length].name}</b><//></div>
- </article>${!compact && html`<aside><div className="aside-sticky"><nav className="aside-block" aria-label="科目の目次"><h2>この科目の目次</h2>${toc}</nav><nav className="aside-block" aria-label="ほかの選択科目"><h2>選択科目</h2><ul className="side-list">${SUBJECTS.map(q=>html`<li key=${q.id}><${NavLink} route=${'subject-'+q.id} current=${q.id===p.id}>${q.name}<//></li>`)}</ul></nav></div></aside>`}</div></div>`;
+ <nav className="pager" aria-label="前後のページ"><${NavLink} route="subjects"><span className="dir"><${Icon} name="left"/>科目一覧に戻る</span><b>選択科目</b><//><${NavLink} route=${'subject-'+next.id} className="next"><span className="dir">次の科目<${Icon} name="right"/></span><b>${next.name}</b><//></nav>
+ <${RelatedLinks} links=${[{route:'voices',anchor:'written',label:'先輩たちの声：科目選びと勉強時間の配分（架空データ）'},{route:'basic-written',label:'基本情報：筆記試験の形式'}]}/>
+ </article>${!compact && html`<aside className="detail-aside" aria-label="補助ナビゲーション"><div className="aside-sticky"><nav className="aside-block" aria-label="ほかの選択科目"><h2>選択科目</h2><ul className="side-list">${SUBJECTS.map(q=>html`<li key=${q.id}><${NavLink} route=${'subject-'+q.id} current=${q.id===p.id}><${Icon} name="files"/>${q.name}<//></li>`)}</ul></nav></div></aside>`}</div></div>`;
 }
 
 function BasicList(){
@@ -1095,7 +1118,7 @@ function SectionBody({ s }){
 }
 
 function Toc({ page }){
-  const items = [{ id: 'summary', label: '要点のまとめ' }].concat(page.sections.map(s => ({ id: s.id, label: s.heading })), [{ id: 'history', label: '更新履歴' }, { id: 'related', label: '関連する情報' }]);
+  const items = [{ id: 'summary', label: '要点のまとめ' }].concat(page.sections.map(s => ({ id: s.id, label: s.heading })), [{ id: 'history', label: '更新履歴' }]);
   return html`<ol className="toc">${items.map(it => html`<li key=${it.id}><a href=${'#' + it.id} onClick=${e => { e.preventDefault(); scrollToAnchor(it.id); }}>${it.label}</a></li>`)}</ol>`;
 }
 
@@ -1105,9 +1128,10 @@ function BasicDetail({ page }){
   const idx = PAGES.findIndex(p => p.id === page.id);
   const prev = PAGES[idx - 1], next = PAGES[idx + 1];
   const M = C.basicMeta;
-  const related = PAGES.filter(p => p.id !== page.id).slice(0, 2);
+  const related = PAGES.filter(p => p.id !== page.id && p !== prev && p !== next).slice(0, 2);
   return html`<div className="container page">
     <${Breadcrumbs} items=${[{ label: 'ホーム', route: 'home' }, { label: '基本情報', route: 'basic' }, { label: page.title }]}/>
+    <${BackLink} route="basic" label="基本情報の一覧に戻る"/>
     <div className="detail-grid">
       <article className="detail-main">
         <${PageHead} part=${html`<${Part1}/>`} tags=${html`<span className="tag">本文は仮文です</span>`} title=${page.title} lead=${page.intro}/>
@@ -1119,7 +1143,7 @@ function BasicDetail({ page }){
             ? html`<a className="btn btn-sub btn-sm" href=${M.officialUrl} target="_blank" rel="noopener">公式の募集要項</a>`
             : html`<button type="button" className="btn btn-sm" disabled><${Icon} name="link"/>公式リンク準備中</button>`}</div>
         </dl>
-        ${compact && html`<div className="toc-mobile"><${Accordion} id="toc-m" variant="box" level=${2} title="このページの目次"><${Toc} page=${page}/><//></div>`}
+        ${compact && html`<${MiniToc} items=${[['summary', '要点のまとめ']].concat(page.sections.map(s => [s.id, s.heading]))}/>`}
         <section className="summary" aria-labelledby="summary"><h2 id="summary">要点のまとめ</h2>
           <ul>${page.points.map((p, i) => html`<li key=${i}>${p}</li>`)}</ul></section>
         ${page.sections.map(s => html`<section key=${s.id} className="doc-sec" aria-labelledby=${s.id}><h2 id=${s.id}>${s.heading}</h2><${SectionBody} s=${s}/></section>`)}
@@ -1129,15 +1153,12 @@ function BasicDetail({ page }){
           <p>内容の誤りや、新しい情報に気づいたら教えてください（非公開で受け付けます）。</p>
           <button type="button" className="btn btn-sub btn-sm" onClick=${() => navigate('about', 'contact', { prefill: { type: 'report', page: 'basic-' + page.id } })}><${Icon} name="flag"/>誤り・更新情報を報告</button>
         </div>
-        <section className="doc-sec" aria-labelledby="related"><h2 id="related">関連する情報</h2>
-          <ul className="cards two">${related.map(p => html`<${CategoryCard} key=${p.id} page=${p} index=${PAGES.indexOf(p)}/>`)}
-            <li><${NavLink} route="voices" className="card-link"><span className="card-ico"><${Icon} name="people"/></span>
-              <span className="card-body"><span className="card-num">第3部</span><span className="card-title">先輩たちの声</span><span className="card-desc">アンケートの集計（架空データ）</span></span>
-              <span className="card-arrow"><${Icon} name="arrow"/></span><//></li></ul></section>
         <nav className="pager" aria-label="前後のページ">
-          ${prev ? html`<${NavLink} route=${'basic-' + prev.id}><span className="dir"><${Icon} name="left"/>前のページ</span><b>${prev.title}</b><//>` : html`<${NavLink} route="basic"><span className="dir"><${Icon} name="left"/>一覧へ</span><b>基本情報の一覧</b><//>`}
+          ${prev ? html`<${NavLink} route=${'basic-' + prev.id}><span className="dir"><${Icon} name="left"/>前のページ</span><b>${prev.title}</b><//>` : html`<span></span>`}
           ${next ? html`<${NavLink} route=${'basic-' + next.id} className="next"><span className="dir">次のページ<${Icon} name="right"/></span><b>${next.title}</b><//>` : html`<${NavLink} route="subjects" className="next"><span className="dir">次は第2部<${Icon} name="right"/></span><b>選択科目</b><//>`}
         </nav>
+        <div className="page-end"><${BackLink} route="basic" label="基本情報の一覧に戻る"/></div>
+        <${RelatedLinks} links=${related.map(p => ({ route: 'basic-' + p.id, label: '基本情報：' + p.title })).concat([{ route: 'voices', label: '先輩たちの声（架空データ）' }])}/>
       </article>
       ${!compact && html`<aside className="detail-aside" aria-label="補助ナビゲーション"><div className="aside-sticky">
         <nav className="aside-block" aria-label="このページの目次"><h2>このページの目次</h2><${Toc} page=${page}/></nav>
@@ -1420,7 +1441,7 @@ function ContactForm({ prefill }){
 
 function About({ prefill }){
   const compact = useMedia('(max-width: 1023px)');
-  const toc = [['operator', '運営元と位置づけ'], ['policy', '情報の確認・更新方針'], ['survey-rules', 'アンケート結果の公開ルール'], ['access', '閲覧範囲について'], ['privacy', 'プライバシー方針（仮）'], ['contact', '質問・誤り報告フォーム']];
+  const toc = [['operator', '運営元と位置づけ'], ['news', 'お知らせ・更新履歴'], ['policy', '情報の確認・更新方針'], ['survey-rules', 'アンケート結果の公開ルール'], ['access', '閲覧範囲について'], ['privacy', 'プライバシー方針（仮）'], ['contact', '質問・誤り報告フォーム']];
   return html`<div className="container page">
     <${Breadcrumbs} items=${[{ label: 'ホーム', route: 'home' }, { label: '運営について' }]}/>
     <div className="about-grid">
@@ -1429,6 +1450,8 @@ function About({ prefill }){
         <section className="doc-sec" aria-labelledby="operator"><h2 id="operator">運営元と位置づけ</h2>
           <dl className="facts-dl"><dt>運営元</dt><dd>${C.site.operator}</dd><dt>位置づけ</dt><dd>応用化学科の学生向けの、学科内限定・非営利の情報共有</dd>
             <dt>公式性</dt><dd><strong>大学・学科の公式情報ではありません。</strong>大学の公式ロゴは使用していません。</dd></dl></section>
+        <section className="doc-sec" aria-labelledby="news"><h2 id="news">お知らせ・更新履歴</h2>
+          <ul className="news">${C.home.news.map((n, i) => html`<li key=${i}><time>${n.date}</time><span><span className="tag">${n.cat}</span></span><p>${n.text}</p></li>`)}</ul></section>
         <section className="doc-sec" aria-labelledby="policy"><h2 id="policy">情報の確認・更新方針</h2>
           <ul className="bullets"><li>基本情報は発起人が調べてまとめ、日程や形式が変わったときに見直します。</li><li>各ページに対象年度・情報確認日・出典を表示します。確認できていない内容は「確認中」と表示します。</li>
             <li>誤りを直したときは、ページ末の更新履歴に日付と内容を記録します。</li><li>先輩アンケートは毎年集計し、年度ごとに積み上げます。</li></ul></section>
